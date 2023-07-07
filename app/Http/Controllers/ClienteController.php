@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     public function index(){
-        return "Este es el listado de clientes";
+        return view('clientes.index');
     }
     public function create(){
-        return "creación de un nuevo cliente";
+        return view('clientes.create');
     }
     public function show($id){
-        return "Datos Detallados del cliente: $id";
+        return view('clientes.show',['id'=>$id]);
+        //return "Datos Detallados del instrumento: $id";
     }
 }

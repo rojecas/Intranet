@@ -17,9 +17,27 @@ use Illuminate\Support\Facades\Route;
 */
  
 Route::get('/', HomeController::class);
+
+// Sintaxis de  Laravel 10
+Route::controller(ClienteController::class)->group(function () {
+    Route::get('/clientes','index');
+    Route::get('/clientes/create','create');
+    Route::get('/clientes/{id}','show'); 
+});
+/* Sintaxis de  Laravel 9 
 Route::get('/clientes', [ClienteController::class,'index']);
 Route::get('/clientes/create', [ClienteController::class,'create']);
 Route::get('/clientes/{id}', [ClienteController::class,'show']);
+ */
+
+ // Sintaxis de  Laravel 10
+Route::controller(InstrumentoController::class)->group(function(){
+    Route::get('/instrumentos','index');
+    Route::get('/instrumentos/create','create');
+    Route::get('/instrumentos/{id}','show');    
+});
+
+/* Sintaxis de  Laravel 9 
 Route::get('/instrumentos', [InstrumentoController::class,'index']);
 Route::get('/instrumentos/create', [InstrumentoController::class,'create']);
-Route::get('/instrumentos/{id}', [InstrumentoController::class,'show']);
+Route::get('/instrumentos/{id}', [InstrumentoController::class,'show']); */

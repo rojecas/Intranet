@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 class InstrumentoController extends Controller
 {
     public function index(){
-        return "Este es el listado de instrumentos";
+        return view('instrumentos.index');
     }
     public function create(){
-        return "creación de un nuevo instrumentos";
+        return view('instrumentos.create');
     }
     public function show($id){
-        return "Datos Detallados del instrumento: $id";
+        return view('instrumentos.show',compact('id'));
+        //return view('instrumentos.show',['id'=>$id]);
     }
 }
